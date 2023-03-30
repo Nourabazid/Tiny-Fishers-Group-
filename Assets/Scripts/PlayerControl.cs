@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
 {
-    private Rigidbody2D move;
+   /* private Rigidbody2D move;
+    public AnimationCurve curve;
+    public float Speed;
+    public Vector2 dir;
+    private Vector2 originPos;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,5 +24,5 @@ public class PlayerControl : MonoBehaviour
     void FixedUpdate()
     {
        
-    }
+    }*/  //Some code for boat floating animation.
 }

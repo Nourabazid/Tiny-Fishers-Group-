@@ -5,6 +5,8 @@ using UnityEngine;
 public class Fish : MonoBehaviour
 {
     private Timer timer;
+    public float weight;
+    public int value;
     public float speed;
     public float acceleration;
     public float Max_Speed;
@@ -60,8 +62,7 @@ public class Fish : MonoBehaviour
         if (collision.tag == "Player")
         {
             Destroy(this.gameObject);
-            theScoremanager.AddScore(3);
-            timer.MaxHealth++;
+            theScoremanager.AddScore(value);
         }
     }
 
