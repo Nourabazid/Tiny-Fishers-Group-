@@ -11,6 +11,7 @@ public class Timer : MonoBehaviour
     private float health;
     private float hp;
     private GameObject player;
+    public Image HPBar;
 
     private void Start()
     {
@@ -31,5 +32,12 @@ public class Timer : MonoBehaviour
             health =MaxHealth- hp;
             TimeandHealth.text = "Health:" + ((int)health).ToString();
         }
+
+        BarFiller();
+    }
+
+    void BarFiller()
+    {
+        HPBar.fillAmount = health / MaxHealth;
     }
 }
