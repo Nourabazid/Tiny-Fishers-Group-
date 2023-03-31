@@ -55,6 +55,7 @@ public class Fish : MonoBehaviour
         if(theWeightmanager.Totalweight>theWeightmanager.Max_Weight)
         {
             ishooked = false;
+            StartCoroutine(Wait());
             theWeightmanager.Totalweight = 0;
         }
     }
@@ -85,4 +86,9 @@ public class Fish : MonoBehaviour
         Vector2 ArttachedDirection = hook.transform.position - transform.position;
         GetComponent<Rigidbody2D>().AddForce(ArttachedDirection.normalized * hookstrength);
     }    
+
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(1);
+    }
 }

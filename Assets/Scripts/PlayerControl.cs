@@ -4,15 +4,17 @@ using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
 {
+    public GameObject hook;
    /* private Rigidbody2D move;
     public AnimationCurve curve;
     public float Speed;
     public Vector2 dir;
     private Vector2 originPos;
     // Start is called before the first frame update
+   */
     void Start()
     {
-        move = GetComponent<Rigidbody2D>();
+        
     }
 
     // Update is called once per frame
@@ -24,5 +26,5 @@ public class PlayerControl : MonoBehaviour
     void FixedUpdate()
     {
        
-    }*/  //Some code for boat floating animation.
+    }
 }

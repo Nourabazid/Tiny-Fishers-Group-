@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class WeightManager : MonoBehaviour
 {
-    public float Totalweight=0;
-    public float Max_Weight = 16;
+    public float Totalweight;
+    public float Max_Weight;
     public Image WeightIcon;
     // Start is called before the first frame update
     void Start()
