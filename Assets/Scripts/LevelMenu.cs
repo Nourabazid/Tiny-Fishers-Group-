@@ -3,18 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainMenu : MonoBehaviour
+public class LevelMenu : MonoBehaviour
 {
-    public void StartGame()
-    {
-        SceneManager.LoadScene("Level Page");
-    }
 
-    public void Instructions()
+    public void Level1()
     {
-        SceneManager.LoadScene("Instructions");
+        SceneManager.LoadScene("Game");
     }
-
     public void Back()
     {
         SceneManager.LoadScene("Start Page");
