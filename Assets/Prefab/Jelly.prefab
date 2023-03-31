@@ -100,13 +100,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weight: 2
-  Totalweight: 0
+  value: 8
   speed: 0
   acceleration: 100
-  Max_Speed: 6
+  Max_Speed: 8
   DIR_X: -1
   hookstrength: 500
-  theScoremanager: {fileID: 0}
 --- !u!58 &9000871071491174645
 CircleCollider2D:
   m_ObjectHideFlags: 0
