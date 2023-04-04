@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2831120012621440583}
   - component: {fileID: 2058670131218653414}
-  - component: {fileID: 9083949836091566587}
   - component: {fileID: 5628217054435626972}
   - component: {fileID: 4677416452672994544}
   - component: {fileID: 2942369734029972685}
+  - component: {fileID: 2160741249554548661}
   m_Layer: 0
   m_Name: Shark
   m_TagString: Fish
@@ -88,25 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &9083949836091566587
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7774157212702766419}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98b14ab2f370a6948a7a6ccd7922a5b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weight: 10
-  value: 15
-  speed: 0
-  acceleration: 100
-  Max_Speed: 0.1
-  DIR_X: 1
-  hookstrength: 500
 --- !u!58 &5628217054435626972
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -164,3 +145,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2160741249554548661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7774157212702766419}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bfc6a5845455924a98dfd6c90938b7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  acceleration: 1
+  Max_Speed: 1
+  DIR_X: 1

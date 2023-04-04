@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 7412648793375209868}
   - component: {fileID: 7412648793375209911}
-  - component: {fileID: 7412648793375209864}
   - component: {fileID: 7412648793375209865}
   - component: {fileID: 7412648793375209866}
   - component: {fileID: 7412648793375209867}
+  - component: {fileID: 1618666063216266960}
   m_Layer: 0
   m_Name: Jelly
   m_TagString: Fish
@@ -88,25 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7412648793375209864
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7412648793375209869}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98b14ab2f370a6948a7a6ccd7922a5b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  weight: 2
-  value: 6
-  speed: 0
-  acceleration: 100
-  Max_Speed: 6
-  DIR_X: -1
-  hookstrength: 500
 --- !u!58 &7412648793375209865
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -164,3 +145,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1618666063216266960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7412648793375209869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d926823d263628a449be704bd2b90850, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  acceleration: 6
+  Max_Speed: 6
+  DIR_X: -1
+  zap: {fileID: 1945749854807861932, guid: e7ae51cf766657241b0e481c3656aca0, type: 3}
