@@ -8,7 +8,7 @@ public class Timer : MonoBehaviour
 {
    // public Text TimeandHealth;
     public float MaxHealth;
-    private float health;
+    public float health;
     private float hp;
     private GameObject player;
     public Image HPBar;

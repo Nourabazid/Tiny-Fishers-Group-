@@ -78,6 +78,8 @@ public class Fish : MonoBehaviour
             Destroy(this.gameObject);
             theScoremanager.AddScore(value);
             theWeightmanager.Reset();
+            timer.health+=10;
+            
         }
     }
 
