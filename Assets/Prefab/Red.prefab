@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weight: 3
-  value: 2
+  value: 1
   speed: 0
   acceleration: 100
   Max_Speed: 2
