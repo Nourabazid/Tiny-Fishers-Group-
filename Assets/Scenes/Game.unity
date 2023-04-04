@@ -650,7 +650,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fd75fcab2356314ea58b21a33c65144, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MaxHealth: 200
+  MaxHealth: 25
   health: 0
   HPBar: {fileID: 1004329443}
 --- !u!1 &221352796
@@ -3349,7 +3349,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2b6016d6f1c34e4ebe32018e6aaa381, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Fish: {fileID: 4843128151125516700, guid: a625faab1b1d0cd4e9e01ff7d5bbb410, type: 3}
+  Fish: {fileID: 2260649834767437044, guid: a625faab1b1d0cd4e9e01ff7d5bbb410, type: 3}
   maxX: 10.2
   minX: 9.2
   maxY: 1
@@ -3406,6 +3406,6 @@ MonoBehaviour:
   minX: 9.2
   maxY: 1
   minY: -8.5
-  TimeBetweenSpawn: 5
+  TimeBetweenSpawn: 1
   shortenTime: 0.1
-  min_TBS: 5
+  min_TBS: 1

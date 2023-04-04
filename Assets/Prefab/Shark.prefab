@@ -158,6 +158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
+  value: -10
   acceleration: 1
   Max_Speed: 1
   DIR_X: 1

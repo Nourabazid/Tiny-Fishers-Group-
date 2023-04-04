@@ -40,4 +40,14 @@ public class Timer : MonoBehaviour
     {
         HPBar.fillAmount = health / MaxHealth;
     }
+
+    public void Increase(float toAdd)
+    {
+        health += toAdd;
+    }
+
+    public void Decrease(float toMinus)
+    {
+        health -= toMinus;
+    }
 }

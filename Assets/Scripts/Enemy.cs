@@ -5,17 +5,24 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public float speed;
+    public int value;
     public float acceleration;
     public float Max_Speed;
+    private Timer timer;
+    private ScoreManager theScoremanager;
     private Rigidbody2D move;
     public float DIR_X;
     private GameObject hook;
     private Vector2 fishdir;
+    private bool ishooked;
     // Start is called before the first frame update
     void Start()
     {
         move = GetComponent<Rigidbody2D>();
         hook = GameObject.FindWithTag("Hook");
+        ishooked = false;
+        theScoremanager = FindObjectOfType<ScoreManager>();
+        timer = FindObjectOfType<Timer>();
     }
 
     // Update is called once per frame
@@ -33,4 +40,6 @@ public class Enemy : MonoBehaviour
             move.velocity = new Vector2(Mathf.Sign(move.velocity.x) * Max_Speed, 0);//Recieve the moving spped in real time,limit the max speed.
         }//Keep the fish moving
     }
+
+    
 }
