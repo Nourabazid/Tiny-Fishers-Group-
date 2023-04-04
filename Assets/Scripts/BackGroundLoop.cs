@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class BackGroundLoop : MonoBehaviour
 {
-    public float backgroundSpeed;
+    public float backgroundSpeed=0;
     public Renderer backgroundrender;
     public GameObject player;
 
     private void Start()
     {
-       backgroundSpeed = player.GetComponent<Rigidbody2D>().velocity.x;
+       //backgroundSpeed = player.GetComponent<Rigidbody2D>().velocity.x;
     }
     // Update is called once per frame
     void Update()

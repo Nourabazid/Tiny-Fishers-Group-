@@ -5,6 +5,12 @@ using UnityEngine;
 public class Fish : MonoBehaviour
 {
     private Timer timer;
+    private ScoreManager theScoremanager;
+    private WeightManager theWeightmanager;
+
+
+    public float weight;
+    public int value;
     public float speed;
     public float acceleration;
     public float Max_Speed;
@@ -14,15 +20,17 @@ public class Fish : MonoBehaviour
     public float hookstrength;
     private Vector2 fishdir;
     private bool ishooked;
-    public ScoreManager theScoremanager;
+
     // Start is called before the first frame update
     void Start()
     {
+        theScoremanager = FindObjectOfType<ScoreManager>();
+        timer = FindObjectOfType<Timer>();
+        theWeightmanager = FindObjectOfType<WeightManager>();
+
         move = GetComponent<Rigidbody2D>();
         ishooked = false;
         hook = GameObject.FindWithTag("Hook");
-        theScoremanager = FindObjectOfType<ScoreManager>();
-        timer = FindObjectOfType<Timer>();
     }
 
     // Update is called once per frame
@@ -43,6 +51,13 @@ public class Fish : MonoBehaviour
         {
             Hooked();
         }
+
+        if(theWeightmanager.Totalweight>theWeightmanager.Max_Weight)
+        {
+            ishooked = false;
+            StartCoroutine(Wait());
+            theWeightmanager.Totalweight = 0;
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -55,13 +70,16 @@ public class Fish : MonoBehaviour
         {
             move.velocity = new Vector2(0, 0);
             ishooked = true;
+            theWeightmanager.AddWeight(weight);
         }
 
         if (collision.tag == "Player")
         {
             Destroy(this.gameObject);
-            theScoremanager.AddScore(3);
-            timer.MaxHealth++;
+            theScoremanager.AddScore(value);
+            theWeightmanager.Reset();
+            timer.health+=10;
+            
         }
     }
 
@@ -70,4 +88,9 @@ public class Fish : MonoBehaviour
         Vector2 ArttachedDirection = hook.transform.position - transform.position;
         GetComponent<Rigidbody2D>().AddForce(ArttachedDirection.normalized * hookstrength);
     }    
+
+    IEnumerator Wait()
+    {
+        yield return new WaitForSeconds(1);
+    }
 }

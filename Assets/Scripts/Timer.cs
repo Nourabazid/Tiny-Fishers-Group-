@@ -6,11 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class Timer : MonoBehaviour
 {
-    public Text TimeandHealth;
+   // public Text TimeandHealth;
     public float MaxHealth;
-    private float health;
+    public float health;
     private float hp;
     private GameObject player;
+    public Image HPBar;
 
     private void Start()
     {
@@ -29,7 +30,14 @@ public class Timer : MonoBehaviour
         {
             hp += Time.deltaTime * 1;
             health =MaxHealth- hp;
-            TimeandHealth.text = "Health:" + ((int)health).ToString();
+           // TimeandHealth.text = "Health:" + ((int)health).ToString();
         }
+
+        BarFiller();
+    }
+
+    void BarFiller()
+    {
+        HPBar.fillAmount = health / MaxHealth;
     }
 }
