@@ -21,7 +21,7 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(health==0f)
+        if(health<=0f)
         {
             SceneManager.LoadScene("Lose");
         }
