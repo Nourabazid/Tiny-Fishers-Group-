@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5628217054435626972}
   - component: {fileID: 4677416452672994544}
   - component: {fileID: 2942369734029972685}
-  - component: {fileID: 2160741249554548661}
+  - component: {fileID: -2158898585316909925}
   m_Layer: 0
   m_Name: Shark
   m_TagString: Fish
@@ -145,7 +145,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &2160741249554548661
+--- !u!114 &-2158898585316909925
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -154,11 +154,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 7774157212702766419}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4bfc6a5845455924a98dfd6c90938b7b, type: 3}
+  m_Script: {fileID: 11500000, guid: 56db7e2445f035c449cc3947502fe1ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
-  value: -10
-  acceleration: 1
+  value: -5
+  acceleration: 100
   Max_Speed: 1
   DIR_X: 1

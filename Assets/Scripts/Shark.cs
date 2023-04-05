@@ -2,10 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Jelly : Enemy
+public class Shark : Enemy
 {
-    public GameObject zap;
-
     private Timer timer;
     private ScoreManager theScoremanager;
     private Rigidbody2D move;
@@ -13,7 +11,8 @@ public class Jelly : Enemy
     private GameObject hook;
     private Vector2 fishdir;
     private bool ishooked;
-    private void Start()
+    // Start is called before the first frame update
+    void Start()
     {
         move = GetComponent<Rigidbody2D>();
         hook = GameObject.FindWithTag("Hook");
@@ -22,6 +21,7 @@ public class Jelly : Enemy
         timer = FindObjectOfType<Timer>();
     }
 
+    // Update is called once per frame
     void Update()
     {
         fishdir = new Vector2(DIR_X, 0).normalized;
@@ -41,10 +41,8 @@ public class Jelly : Enemy
 
         if (collision.tag == "Hook")
         {
-           
-                Instantiate(zap, transform.position, transform.rotation);
-                theScoremanager.AddScore(value);
-
+            ishooked = true;
+            theScoremanager.AddScore(value);
         }
 
         if (collision.tag == "Border")
@@ -52,4 +50,5 @@ public class Jelly : Enemy
             Destroy(this.gameObject);
         }
     }
+
 }

@@ -124,7 +124,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!95 &7412648793375209867
 Animator:
   serializedVersion: 4
@@ -158,8 +158,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
-  value: -6
-  acceleration: 6
-  Max_Speed: 6
+  value: -1
+  acceleration: 100
+  Max_Speed: 2
   DIR_X: -1
   zap: {fileID: 1945749854807861932, guid: e7ae51cf766657241b0e481c3656aca0, type: 3}

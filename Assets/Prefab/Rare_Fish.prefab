@@ -101,9 +101,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weight: 0
-  value: 10
+  value: 2
   speed: 0
-  acceleration: 4
+  acceleration: 100
   Max_Speed: 8
   DIR_X: -1
   hookstrength: 500
