@@ -7,7 +7,9 @@ public class Fish : MonoBehaviour
     private Timer timer;
     private ScoreManager theScoremanager;
     private WeightManager theWeightmanager;
+    private HealthMeter healthmeter;
 
+    public AudioSource fishcatch;
 
     public float weight;
     public int value;
@@ -27,7 +29,7 @@ public class Fish : MonoBehaviour
         theScoremanager = FindObjectOfType<ScoreManager>();
         timer = FindObjectOfType<Timer>();
         theWeightmanager = FindObjectOfType<WeightManager>();
-
+        healthmeter = FindObjectOfType<HealthMeter>();
         move = GetComponent<Rigidbody2D>();
         ishooked = false;
         hook = GameObject.FindWithTag("Hook");
@@ -78,8 +80,8 @@ public class Fish : MonoBehaviour
             Destroy(this.gameObject);
             theScoremanager.AddScore(value);
             theWeightmanager.Reset();
-            timer.health+=10;
-            
+            timer.Increase(1);
+            healthmeter.Increase(1);
         }
     }
 

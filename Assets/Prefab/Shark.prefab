@@ -10,13 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 2831120012621440583}
   - component: {fileID: 2058670131218653414}
-  - component: {fileID: 5628217054435626972}
   - component: {fileID: 4677416452672994544}
   - component: {fileID: 2942369734029972685}
   - component: {fileID: -2158898585316909925}
+  - component: {fileID: 5677658117544146978}
   m_Layer: 0
   m_Name: Shark
-  m_TagString: Fish
+  m_TagString: Bad
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -88,22 +88,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &5628217054435626972
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7774157212702766419}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: -0.47180623, y: 0.041203786}
-  serializedVersion: 2
-  m_Radius: 3.7047887
 --- !u!50 &4677416452672994544
 Rigidbody2D:
   serializedVersion: 4
@@ -124,7 +108,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!95 &2942369734029972685
 Animator:
   serializedVersion: 4
@@ -162,3 +146,19 @@ MonoBehaviour:
   acceleration: 100
   Max_Speed: 1
   DIR_X: 1
+--- !u!70 &5677658117544146978
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7774157212702766419}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 1.4480793, y: -0.19397067}
+  m_Size: {x: 11.957804, y: 4.705521}
+  m_Direction: 1

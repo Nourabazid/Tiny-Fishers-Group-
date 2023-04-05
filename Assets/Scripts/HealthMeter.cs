@@ -4,33 +4,26 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class Timer : MonoBehaviour
+public class HealthMeter : MonoBehaviour
 {
    // public Text TimeandHealth;
-    public float MaxTime;
-    public float Timeleft;
-    private float TimetoDecrease;
+    public float MaxHealth;
+    public float health;
+    private float hp;
     private GameObject player;
-    public Image TimeIcon;
+    public Image HPBar;
 
     private void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        Timeleft = MaxTime;
+        health = MaxHealth;
     }
     // Update is called once per frame
     void Update()
     {
-        if(Timeleft<=0f)
+        if(health<=0f)
         {
             SceneManager.LoadScene("Lose");
-        }
-
-        if (GameObject.FindGameObjectWithTag("Player") != null)
-        {
-            TimetoDecrease += Time.deltaTime * 1;
-            Timeleft =MaxTime- TimetoDecrease;
-           // TimeandHealth.text = "Health:" + ((int)health).ToString();
         }
 
         BarFiller();
@@ -38,16 +31,16 @@ public class Timer : MonoBehaviour
 
     void BarFiller()
     {
-        TimeIcon.fillAmount = Timeleft/ MaxTime;
+        HPBar.fillAmount = health / MaxHealth;
     }
 
     public void Increase(float toAdd)
     {
-        TimetoDecrease-= toAdd;
+        health += toAdd;
     }
 
     public void Decrease(float toMinus)
     {
-        TimetoDecrease+= toMinus;
+        health -= toMinus;
     }
 }

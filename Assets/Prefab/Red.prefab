@@ -100,6 +100,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98b14ab2f370a6948a7a6ccd7922a5b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fishcatch: {fileID: 7411355720389745564, guid: 66a715021c687fd4b943ea4039f13744, type: 3}
   weight: 3
   value: 1
   speed: 0

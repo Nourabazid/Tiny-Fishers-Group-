@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 7740662962324109910}
   m_Layer: 0
   m_Name: Rare_Fish
-  m_TagString: Untagged
+  m_TagString: Fish
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,11 +100,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98b14ab2f370a6948a7a6ccd7922a5b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fishcatch: {fileID: 7411355720389745564, guid: 66a715021c687fd4b943ea4039f13744, type: 3}
   weight: 0
   value: 2
   speed: 0
   acceleration: 100
-  Max_Speed: 8
+  Max_Speed: 4
   DIR_X: -1
   hookstrength: 500
 --- !u!70 &1638659128727595497

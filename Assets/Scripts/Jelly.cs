@@ -4,22 +4,26 @@ using UnityEngine;
 
 public class Jelly : Enemy
 {
-    public GameObject zap;
 
-    private Timer timer;
+    private HealthMeter healthmeter;
     private ScoreManager theScoremanager;
     private Rigidbody2D move;
 
     private GameObject hook;
     private Vector2 fishdir;
     private bool ishooked;
+
+    private bool canDamage = true;
+    private bool Damaging;
+    private float damageTime = 0.5f;
+    private float DamageCooldown = 1f;
     private void Start()
     {
         move = GetComponent<Rigidbody2D>();
         hook = GameObject.FindWithTag("Hook");
         ishooked = false;
         theScoremanager = FindObjectOfType<ScoreManager>();
-        timer = FindObjectOfType<Timer>();
+        healthmeter = FindObjectOfType<HealthMeter>();
     }
 
     void Update()
@@ -41,9 +45,9 @@ public class Jelly : Enemy
 
         if (collision.tag == "Hook")
         {
-           
-                Instantiate(zap, transform.position, transform.rotation);
-                theScoremanager.AddScore(value);
+            ishooked = true;
+            StartCoroutine(Damage());
+
 
         }
 
@@ -51,5 +55,20 @@ public class Jelly : Enemy
         {
             Destroy(this.gameObject);
         }
+    }
+
+    private IEnumerator Damage()
+    {
+        canDamage = false;
+        Damaging = true;//Damaging
+
+        theScoremanager.AddScore(value);
+        healthmeter.Increase(value);
+
+        yield return new WaitForSeconds(damageTime);
+
+        Damaging = false;
+        yield return new WaitForSeconds(DamageCooldown);
+        canDamage = true;
     }
 }
