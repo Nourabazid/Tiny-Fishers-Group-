@@ -9,7 +9,7 @@ public class Fish : MonoBehaviour
     private WeightManager theWeightmanager;
     private HealthMeter healthmeter;
 
-    public AudioSource fishcatch;
+    AudioSource fishcatch;
 
     public float weight;
     public int value;
@@ -33,6 +33,8 @@ public class Fish : MonoBehaviour
         move = GetComponent<Rigidbody2D>();
         ishooked = false;
         hook = GameObject.FindWithTag("Hook");
+
+        fishcatch = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -57,7 +59,6 @@ public class Fish : MonoBehaviour
         if(theWeightmanager.Totalweight>theWeightmanager.Max_Weight)
         {
             ishooked = false;
-            StartCoroutine(Wait());
             theWeightmanager.Totalweight = 0;
         }
     }
@@ -77,11 +78,7 @@ public class Fish : MonoBehaviour
 
         if (collision.tag == "Player")
         {
-            Destroy(this.gameObject);
-            theScoremanager.AddScore(value);
-            theWeightmanager.Reset();
-            timer.Increase(1);
-            healthmeter.Increase(1);
+            StartCoroutine(Catched());
         }
     }
 
@@ -91,8 +88,14 @@ public class Fish : MonoBehaviour
         GetComponent<Rigidbody2D>().AddForce(ArttachedDirection.normalized * hookstrength);
     }    
 
-    IEnumerator Wait()
+    private IEnumerator Catched()
     {
-        yield return new WaitForSeconds(1);
+        fishcatch.Play();
+        theScoremanager.AddScore(value);
+        theWeightmanager.Reset();
+        timer.Increase(1);
+        healthmeter.Increase(1);
+        yield return new WaitForSeconds(0.5f);
+        Destroy(this.gameObject);
     }
 }

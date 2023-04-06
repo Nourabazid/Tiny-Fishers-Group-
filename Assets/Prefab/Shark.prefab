@@ -144,7 +144,7 @@ MonoBehaviour:
   speed: 0
   value: -5
   acceleration: 100
-  Max_Speed: 1
+  Max_Speed: 1.5
   DIR_X: 1
 --- !u!70 &5677658117544146978
 CapsuleCollider2D:

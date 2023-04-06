@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Jelly : Enemy
 {
-
+    public GameObject Zap;
     private HealthMeter healthmeter;
     private ScoreManager theScoremanager;
     private Rigidbody2D move;
@@ -17,6 +17,8 @@ public class Jelly : Enemy
     private bool Damaging;
     private float damageTime = 0.5f;
     private float DamageCooldown = 1f;
+    private AudioSource Elec;
+
     private void Start()
     {
         move = GetComponent<Rigidbody2D>();
@@ -24,6 +26,7 @@ public class Jelly : Enemy
         ishooked = false;
         theScoremanager = FindObjectOfType<ScoreManager>();
         healthmeter = FindObjectOfType<HealthMeter>();
+        Elec = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -46,6 +49,7 @@ public class Jelly : Enemy
         if (collision.tag == "Hook")
         {
             ishooked = true;
+
             StartCoroutine(Damage());
 
 
@@ -64,9 +68,9 @@ public class Jelly : Enemy
 
         theScoremanager.AddScore(value);
         healthmeter.Increase(value);
-
+        Elec.Play();
+        Instantiate(Zap, transform.position, Quaternion.identity);
         yield return new WaitForSeconds(damageTime);
-
         Damaging = false;
         yield return new WaitForSeconds(DamageCooldown);
         canDamage = true;

@@ -4,23 +4,17 @@ using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
 {
-    public GameObject hook;
-   /* private Rigidbody2D move;
-    public AnimationCurve curve;
-    public float Speed;
-    public Vector2 dir;
-    private Vector2 originPos;
-    // Start is called before the first frame update
-   */
+    Vector3 playerpositon;
     void Start()
     {
-        
+        playerpositon = transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        playerpositon.y = Mathf.Sin(Time.time)+ 2.21f;
+        transform.position = playerpositon;
     }
 
     void FixedUpdate()
