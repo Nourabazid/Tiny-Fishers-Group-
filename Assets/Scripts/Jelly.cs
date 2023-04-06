@@ -15,8 +15,8 @@ public class Jelly : Enemy
 
     private bool canDamage = true;
     private bool Damaging;
-    private float damageTime = 0.5f;
-    private float DamageCooldown = 1f;
+    private float damageTime = 1f;
+    private float DamageCooldown = 2f;
     private AudioSource Elec;
 
     private void Start()
@@ -74,5 +74,6 @@ public class Jelly : Enemy
         Damaging = false;
         yield return new WaitForSeconds(DamageCooldown);
         canDamage = true;
+        Destroy(Zap.gameObject);
     }
 }

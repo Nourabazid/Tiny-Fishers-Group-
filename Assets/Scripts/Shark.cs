@@ -7,6 +7,7 @@ public class Shark : Enemy
     private HealthMeter healthmeter;
     private ScoreManager theScoremanager;
     private Rigidbody2D move;
+    private AudioSource Bite;
 
     private GameObject hook;
     private Vector2 fishdir;
@@ -14,8 +15,8 @@ public class Shark : Enemy
 
     private bool canDamage =true ;
     private bool Damaging;
-    private float damageTime=0.5f;
-    private float DamageCooldown= 1f;
+    private float damageTime=1f;
+    private float DamageCooldown= 2f;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +25,7 @@ public class Shark : Enemy
         ishooked = false;
         theScoremanager = FindObjectOfType<ScoreManager>();
         healthmeter = FindObjectOfType<HealthMeter>();
+        Bite = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -63,7 +65,7 @@ public class Shark : Enemy
 
         theScoremanager.AddScore(value);
         healthmeter.Increase(value);
-
+        Bite.Play();
         yield return new WaitForSeconds(damageTime);
 
         Damaging = false;

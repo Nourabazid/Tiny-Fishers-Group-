@@ -13,7 +13,7 @@ public class PlayerControl : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        playerpositon.y = Mathf.Sin(Time.time)+ 2.21f;
+        playerpositon.y = Mathf.Sin(Time.time)/4+ 2.21f;
         transform.position = playerpositon;
     }
 

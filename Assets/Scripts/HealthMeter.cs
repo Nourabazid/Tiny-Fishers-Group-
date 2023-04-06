@@ -21,6 +21,10 @@ public class HealthMeter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(health>MaxHealth)
+        {
+            health = MaxHealth;
+        }
         if(health<=0f)
         {
             SceneManager.LoadScene("Lose");

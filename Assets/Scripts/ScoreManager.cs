@@ -10,7 +10,7 @@ public class ScoreManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        DontDestroyOnLoad(gameObject);
     }
 
     // Update is called once per frame
@@ -21,6 +21,13 @@ public class ScoreManager : MonoBehaviour
 
     public void AddScore(int PointstoAdd)
     {
-        score += PointstoAdd;
+        if(score>=0)
+        {
+            score += PointstoAdd;
+        }
+        else
+        {
+            score++;
+        }
     }
 }

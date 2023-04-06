@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fish : MonoBehaviour
+public class Log : MonoBehaviour
 {
     private Timer timer;
     private ScoreManager theScoremanager;
@@ -51,14 +51,15 @@ public class Fish : MonoBehaviour
             move.velocity = new Vector2(Mathf.Sign(move.velocity.x) * Max_Speed, 0);//Recieve the moving spped in real time,limit the max speed.
         }//Keep the fish moving
 
-        if(ishooked)
+        if (ishooked)
         {
             Hooked();
         }
 
-        if(theWeightmanager.Totalweight>theWeightmanager.Max_Weight)
+        if (theWeightmanager.Totalweight > theWeightmanager.Max_Weight)
         {
-            StartCoroutine(OverWeight());
+            ishooked = false;
+            theWeightmanager.Totalweight = 0;
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -85,25 +86,13 @@ public class Fish : MonoBehaviour
     {
         Vector2 ArttachedDirection = hook.transform.position - transform.position;
         GetComponent<Rigidbody2D>().AddForce(ArttachedDirection.normalized * hookstrength);
-    }    
+    }
 
     private IEnumerator Catched()
     {
-        theWeightmanager.Reset();
-        timer.Increase(1);
-        healthmeter.Increase(1);
         theScoremanager.AddScore(value);
-        fishcatch.Play();
+        theWeightmanager.Reset();
         yield return new WaitForSeconds(0.5f);
-        Destroy(this.gameObject);
-    }
-
-    private IEnumerator OverWeight()
-    {
-        ishooked = false;
-        theWeightmanager.Totalweight = 0;
-        move.AddForce(new Vector2(0, 1) * 1000);
-        yield return new WaitForSeconds(4);
         Destroy(this.gameObject);
     }
 }

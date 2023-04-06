@@ -21,6 +21,10 @@ public class Timer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(Timeleft>MaxTime)
+        {
+            Timeleft = MaxTime;
+        }
         if(Timeleft<=0f)
         {
             SceneManager.LoadScene("Lose");

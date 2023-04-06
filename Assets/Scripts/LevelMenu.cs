@@ -10,6 +10,11 @@ public class LevelMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Game");
     }
+
+    public void Level2()
+    {
+        SceneManager.LoadScene("Game 1");
+    }
     public void Back()
     {
         SceneManager.LoadScene("Start Page");
