@@ -49,4 +49,20 @@ public class PauseMenu : MonoBehaviour
         Time.timeScale = 1.0f;
         SceneManager.LoadScene("Start Page");
     }
+
+    public void OnClick()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (isPaused)
+            {
+                Resume();
+            }
+
+            else
+            {
+                Pause();
+            }
+        }
+    }
 }
