@@ -2,13 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
+
 
 public class ScoreManager : MonoBehaviour
 {
 
     private Text scoreText;
-    public int Max_Score;
     private int score=0;
 
 
@@ -24,12 +23,6 @@ public class ScoreManager : MonoBehaviour
             score = 0;
         }
         scoreText.text = score.ToString();
-
-        if(score>=Max_Score)
-        {
-            SceneManager.LoadScene("Level Page");
-            score = 0;
-        }
     }
 
     public void AddScore(int PointstoAdd)

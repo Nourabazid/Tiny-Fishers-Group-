@@ -13,8 +13,11 @@ public class HealthMeter : MonoBehaviour
     private GameObject player;
     public Image HPBar;
 
+    private FinalScore final;
+
     private void Start()
     {
+        final = FindObjectOfType<FinalScore>();
         player = GameObject.FindGameObjectWithTag("Player");
         health = MaxHealth;
     }
@@ -27,7 +30,10 @@ public class HealthMeter : MonoBehaviour
         }
         if(health<=0f)
         {
+            final.Max_Score = 100;
+            final.FinalText.text = "Final Score:" + final.Finalscore.ToString();
             SceneManager.LoadScene("Lose");
+            final.Finalscore = 0;
         }
 
         BarFiller();

@@ -5,7 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class LevelMenu : MonoBehaviour
 {
-
+    private FinalScore fs;
+    private void Start()
+    {
+        fs=FindObjectOfType<FinalScore>();
+        fs.Delete();
+    }
     public void Level1()
     {
         SceneManager.LoadScene("Game");

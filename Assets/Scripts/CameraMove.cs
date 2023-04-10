@@ -2,21 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraMove : MonoBehaviour
+public class InstructionPage : MonoBehaviour
 {
-    private int pagenum=1;
+    public Transform CameraPos;
+    private int pagenum;
+    
     // Start is called before the first frame update
     void Start()
     {
-        
+        pagenum = 1;
     }
 
     // Update is called once per frame
     void Update()
     {
         if(pagenum>3)
-        { pagenum = 1; }
-        pagemove();
+        {
+            pagenum = 1; 
+        }
     }
 
     public void pagemove()
@@ -28,17 +31,17 @@ public class CameraMove : MonoBehaviour
     {
         if(pagenum==1)
         {
-            transform.position = new Vector3(0, 10.48f, -10);
+            CameraPos.transform.position = new Vector3(0, 10.48f, -10.0f);
         }
 
-        if (pagenum == 2)
+       else if (pagenum == 2)
         {
-            transform.position = new Vector3(0, 10.48f, -10);
+            CameraPos.transform.position = new Vector3(0, 0, -10.0f);
         }
 
-        if (pagenum == 3)
+        else if (pagenum == 3)
         {
-            transform.position = new Vector3(0, 10.48f, -10);
+            CameraPos.transform.position = new Vector3(0, -10.32f, -10.0f);
         }
     }
 }
